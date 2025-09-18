@@ -10,6 +10,6 @@ RUN mvn -q clean package -DskipTests
 FROM eclipse-temurin:17-jre
 WORKDIR /app
 COPY --from=build /app/target/*-SNAPSHOT.jar app.jar
-ENV SPRING_PROFILES_ACTIVE=local
+#ENV SPRING_PROFILES_ACTIVE=local
 EXPOSE 8080
 ENTRYPOINT ["java","-jar","/app/app.jar"]
